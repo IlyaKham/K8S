@@ -16,6 +16,12 @@
 
 ### Задание 2. Создать развертывание и обеспечить запуск основного контейнера при выполнении условий.
 1. Создайте приложение развертывания nginx и обеспечьте запуск контейнера только после того, как будет запущен сервис этого приложения.
-2. Убедиться, что nginx не запускается. В качестве Init-контейнера возьмите busybox.
-3. Создать и запустить Сервис. Убедиться, что Init запустился.
-4. Про возврат состояния до и после запуска сервиса.
+   <img width="697" height="128" alt="Снимок экрана 2026-07-09 171855" src="https://github.com/user-attachments/assets/35976a45-b2b0-4913-a3ef-5a6f6e1664a9" />
+   <img width="680" height="264" alt="Снимок экрана 2026-07-09 172014" src="https://github.com/user-attachments/assets/78e4fdff-bbf5-41c8-95c3-7975f06a2c62" />
+   <img width="792" height="384" alt="Снимок экрана 2026-07-09 172034" src="https://github.com/user-attachments/assets/ac89c5ac-f08a-47b9-98bd-e7ffd3bd1a95" />
+3. Убедиться, что nginx не запускается. В качестве Init-контейнера возьмите busybox.
+4. Создать и запустить Сервис. Убедиться, что Init запустился.
+   <img width="853" height="125" alt="Снимок экрана 2026-07-09 172439" src="https://github.com/user-attachments/assets/3966ce93-bda4-4184-bb05-9fadd56f0e6b" />
+   <img width="718" height="126" alt="Снимок экрана 2026-07-09 173405" src="https://github.com/user-attachments/assets/c39ac8cb-bac4-4521-a62b-335e5aa884e1" />
+   <img width="997" height="205" alt="Снимок экрана 2026-07-09 173513" src="https://github.com/user-attachments/assets/3fca8f62-486d-43c1-b6f2-0d20e56edb99" />
+

@@ -9,5 +9,6 @@
 <img width="908" height="311" alt="Снимок экрана 2026-07-15 165432" src="https://github.com/user-attachments/assets/68926187-8c4d-41ff-a637-abd4313288dc" />
 <img width="748" height="565" alt="Снимок экрана 2026-07-15 165521" src="https://github.com/user-attachments/assets/cf0e3efd-8bca-4d7a-9f5b-5df51cfa063b" />
 <img width="720" height="208" alt="Снимок экрана 2026-07-15 165525" src="https://github.com/user-attachments/assets/bcf36371-b0fa-4484-ae0b-f34ea43618c9" />        
+  
    единственное я так и не понял, почему при обращению к бэкэнду мне выдает ответ фронтенд??? У меня microK8S и по дефолту он запускает Traefik.    
  

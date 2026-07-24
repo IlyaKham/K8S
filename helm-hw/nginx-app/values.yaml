@@ -1,0 +1,97 @@
+# Общие настройки
+replicaCount: 1
+
+# Настройки образа
+image:
+  repository: nginx
+  tag: "1.21.6"
+  pullPolicy: IfNotPresent
+
+# Настройки ServiceAccount (добавлено для совместимости)
+serviceAccount:
+  create: false
+  name: "default"
+
+# Настройки сервиса
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+# Настройки Ingress
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: nginx-app.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+# Настройки Autoscaling (добавлено для совместимости)
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+# Настройки HTTPRoute (добавлено для совместимости)
+httpRoute:
+  enabled: false
+
+# Настройки ресурсов
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+# Настройки конфигурации
+# ... остальные настройки ...
+
+# Настройки конфигурации - используем вложенную структуру
+config:
+  nginx:
+    conf: |
+      server {
+          listen 80;
+          server_name localhost;
+          
+          location / {
+              root /usr/share/nginx/html;
+              index index.html index.htm;
+          }
+          
+          location /health {
+              access_log off;
+              return 200 "healthy\n";
+              add_header Content-Type text/plain;
+          }
+      }
+  
+  html:
+    index: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>Nginx App</title>
+          <style>
+              body { font-family: Arial; text-align: center; padding: 50px; }
+              h1 { color: #333; }
+          </style>
+      </head>
+      <body>
+          <h1>Welcome to Nginx from Helm!</h1>
+          <p>Version: {{ .Values.image.tag }}</p>
+          <p>Environment: {{ .Values.environment | default "unknown" }}</p>
+      </body>
+      </html>
+
+# Дополнительные настройки
+environment: "development"
+nodeSelector: {}
+tolerations: []
+affinity: {}
